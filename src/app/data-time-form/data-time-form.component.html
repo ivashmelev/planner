@@ -1,0 +1,79 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-md-2">
+      <div class="sidebar">
+        
+        <h3>Название</h3>
+        <input type="text" #newTitle>
+
+        <h3>Дата</h3>
+        <input type="date" #newDate>
+
+        <h3>Время</h3>
+        <input type="time" #newTime>
+        <br>
+        <select #newType>
+            <option *ngFor="let type of typesEvent; let i=index" class="{{type.type}}" >{{type.type}}</option>
+          </select><br>
+        <button (click)="add(newTitle.value, newDate.value, newTime.value, newType.value)">Добавить</button>
+        <button (click)="toggle(i)">Изменить</button>
+      </div>
+    </div>
+
+          <!-- <h3>Дата</h3>
+          <input type="date" name="date" [(ngModel)]="date">
+
+          <h3>Время</h3>
+          <input type="time" name="time" [(ngModel)]="time">
+
+          <h3>Имя события</h3>
+          <input type="text" name="nameEvent" [(ngModel)]="nameEvent">
+        
+
+        <h3>Тип</h3>
+        <select name="type" [(ngModel)]="type">
+          <option *ngFor="let typ of types" [value]="typ">{{typ}}</option>
+        </select>
+        <br>
+        <button (click)="save(date, time, nameEvent, type)">Ok</button>
+        <button (click)="open(openView)">Open</button>
+      </div>  
+    </div>
+    <div class="col-md-10">
+      <ul *ngFor="let listElement of listElements" >
+        <li >{{listElement.date}}  {{listElement.time}}  {{listElement.nameEvent}}  {{listElement.type}}</li>
+      </ul>
+     
+      <!-- <ul *ngIf="!condition"> SO so</ul> -->
+      
+        
+    
+    
+  <!-- </div>
+  <div *ngFor="let elemArr of arr">Здесь: {{elemArr.arr}}</div> -->
+    <div class="col-md-10">
+      <ul>
+        <li class="{{event.type}}"*ngFor="let event of events; let i=index">
+          <div >
+            {{event.title}} {{event.date}} {{event.time}} {{event.type}}
+            
+            <button (click)="delete(i)">Удалить</button>
+          </div>
+
+          <div *ngIf="!show">
+            
+            <input type="text" #reTitle value="{{event.title}}">
+            <input type="text" #reDate value="{{event.date}}">
+            <input type="time" #reTime value="{{event.time}}">
+            <select #reType>
+              <option *ngFor="let type of typesEvent; let i=index" class="{{type.type}}">{{type.type}}</option>
+            </select>
+            <button (click)="rename(i, reTitle.value, reDate.value, reTime.value, reType.value)">Ok</button>
+            <!-- <button (click)="toggle(i)">Re</button> -->
+          </div>
+        </li>
+      </ul>      
+    </div>
+</div> 

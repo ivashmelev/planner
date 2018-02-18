@@ -1,0 +1,74 @@
+h3 {
+    font-weight: lighter;
+   
+}
+
+.sidebar{
+    border-right: 1px solid #000;
+    height: 100%;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid black;
+
+}
+
+.Встреча:hover{
+    background-color: orange;
+    transition: .5s;
+} 
+
+.Праздник:hover{
+    background-color: lawngreen;
+    transition: .5s;
+} 
+
+.Свидание:hover{
+    background-color: hotpink;
+    transition: .5s;
+} 
+
+.Встреча{
+    border-color: orange;
+}
+
+.Праздник {
+    border-color: lawngreen;
+}
+
+.Свидание {
+    border-color: hotpink;
+}
+
+button{
+    padding: 0 10px;
+    float: right;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    /* border-top: 1px solid black; */
+}
+
+button:active{
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+}
+#typeborder{
+    color: black;
+}
+
+input{
+    border: 1px solid black;
+    margin: 5px;
+}
+

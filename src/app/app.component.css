@@ -2,4 +2,14 @@
     border-bottom: 1px solid #000;
     font-family: 'Segoe UI', sans-serif;
     padding: 5px;
+    padding-bottom: 0px;
+    cursor: pointer;
 }
+
+.head-literal{
+    border-bottom: 1px solid black;
+    width: 10px;
+    color: red;
+    
+}
+

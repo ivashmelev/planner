@@ -2,7 +2,7 @@
 
   <div class="row">
 
-    <div class="col-md-2">
+    <div class="col-md-4 col-sm-12 col-12">
       <div class="sidebar">
         
         <h3>Название</h3>
@@ -53,17 +53,21 @@
     
   <!-- </div>
   <div *ngFor="let elemArr of arr">Здесь: {{elemArr.arr}}</div> -->
-    <div class="col-md-10">
+    <div class="col-md-8 col-sm- col-8">
+      <div [class.changeView]="!showList">
+        
+      <button (click)="changeView(i)"> | | </button>
+      <br>
       <ul>
-        <li class="{{event.type}}"*ngFor="let event of events; let i=index">
+        <li class="{{event.type}}" *ngFor="let event of events; let i=index">
           <div >
-            {{event.title}} {{event.date}} {{event.time}} {{event.type}}
+            {{event.title}} <span class="datestyle">{{event.date}}</span> {{event.time}} {{event.type}}
             
             <button (click)="delete(i)">Удалить</button>
           </div>
 
           <div *ngIf="!show">
-            
+            <div [class.changeViewRename]="!showList">            
             <input type="text" #reTitle value="{{event.title}}">
             <input type="text" #reDate value="{{event.date}}">
             <input type="time" #reTime value="{{event.time}}">
@@ -73,7 +77,11 @@
             <button (click)="rename(i, reTitle.value, reDate.value, reTime.value, reType.value)">Ok</button>
             <!-- <button (click)="toggle(i)">Re</button> -->
           </div>
+        </div>
         </li>
       </ul>      
     </div>
+ 
+
+  </div>
 </div> 

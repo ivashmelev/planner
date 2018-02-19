@@ -15,6 +15,7 @@ export class DataTimeFormComponent implements OnInit {
   
 
   show: boolean =true;
+  showList: boolean =true;
 
   events = [
     {
@@ -68,19 +69,49 @@ export class DataTimeFormComponent implements OnInit {
   }
 
   toggle(index: number){
-    this.show=!this.show;
-    // console.log(index);
+  
+      // this.showList=!this.showList;
 
+      // this.show=!this.show;
+      // console.log("show: "+this.show);
+    // }
+    // else{
+      // this.changeView(index);
+      // if (this.showList!=false){
+        this.show=!this.show;
+        
+      // }
+      // else {
+        // alert("Редактирование возможно лишь в режиме списка!");
+      // }
+      
+      // console.log("show: "+this.show);
+    // }
+    
+    // console.log(index);    
+  }
+
+  changeView(index){
+    // if (this.show!=true){
+      // this.showList==false;
+      console.log(this.showList);
+    // }
+    // else{
+    this.showList=!this.showList;
+    // console.log(this.showList);
+    // }
     
   }
 
   rename(index: number, title, date, time, type, style){
+    
     console.log(index,title, date, time, type);
     this.events.splice(index, 1);
     this.events.push(
       {title, date, time, type}
     );
     this.toggle(index);
+    
   }
 
   constructor() {

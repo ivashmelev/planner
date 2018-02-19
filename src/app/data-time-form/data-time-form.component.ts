@@ -35,15 +35,16 @@ export class DataTimeFormComponent implements OnInit {
   typesEvent= [
     {type:"Встреча"},{type:"Праздник"},{type:"Свидание"}
   ]
-  
+   v="Календарь";
+
 
   
   // fs = require('fs');
   file(text, name, type){
     var data = JSON.stringify(this.events);
-    // var blob = new Blob([data], {type: 'text/csv'});
-    // var url = window.URL.createObjectURL(blob);
-    // var s = window.open(url);
+    var blob = new Blob([data], {type: 'text/csv'});
+    var url = window.URL.createObjectURL(blob);
+    var s = window.open(url);
     // var fs = require('fs');
     // fs.writeFile('./data.json', data, 'utf-8');
 
@@ -97,6 +98,12 @@ export class DataTimeFormComponent implements OnInit {
       console.log(this.showList);
     // }
     // else{
+      if(this.showList==false){
+        this.v="Календарь";
+      }
+      else {
+         this.v="Список";
+      }
     this.showList=!this.showList;
     // console.log(this.showList);
     // }

@@ -19,6 +19,7 @@
           </select><br>
         <button (click)="add(newTitle.value, newDate.value, newTime.value, newType.value)">Добавить</button>
         <button (click)="toggle(i)">Изменить</button>
+        <button (click)="file()">Скачать</button>
       </div>
     </div>
 
@@ -56,7 +57,7 @@
     <div class="col-md-8 col-sm- col-8">
       <div [class.changeView]="!showList">
         
-      <button (click)="changeView(i)"> | | </button>
+      <button (click)="changeView(i)">{{v}}</button>
       <br>
       <ul>
         <li class="{{event.type}}" *ngFor="let event of events; let i=index">
